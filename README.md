@@ -1,0 +1,2 @@
+# gofun
+Golang fun programs

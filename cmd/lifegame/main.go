@@ -13,7 +13,6 @@ func gamePos(p int) int {
 }
 
 func main() {
-
 	var gameState [gameSize][gameSize]int
 	var newState [gameSize][gameSize]int
 	//var x, y int
@@ -72,10 +71,12 @@ func main() {
 				//gameState[x][y] = x * y
 				//fmt.Printf("Game: %v, x: %d, y: %d\n", gameState[x][y], x, y)
 				if gameState[x][y] == 1 {
-					fmt.Printf("%v", " ")
+					//fmt.Printf("%v", " ")
+					printXY(" ", x, y)
 
 				} else {
-					fmt.Printf("%v", "█")
+					//fmt.Printf("%v", "█")
+					printXY("█", x, y)
 				}
 
 			}

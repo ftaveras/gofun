@@ -16,8 +16,7 @@ func PrintXY(a string, x, y int) {
 
 func DrawBox(w, h int) {
 	/*
-		Ascii Symbols
-		═ ﹄ ﹃ ﹂ ﹁ ┕ ┓ └ ┐ ┖ ┒ ┗ ┑ ┍ ┙ ┏ ┛ ┎ ┚ ┌ ┘ 「 」 『 』 ˩ ˥ ├ ┝ ┞ ┟ ┠ ┡ ┢ ┣ ┤ ┥ ┦ ┧ ┨ ┩ ┪ ┫ ┬ ┭ ┮ ┯ ┰ ┱ ┲ ┳ ┴ ┵ ┶ ┷ ┸ ┹ ┺ ┻ ┼ ┽ ┾ ┿ ╀ ╁ ╂ ╃ ╄ ╅ ╆ ╇ ╈ ╉ ╊ ╋ ╒ ╕ ╓ ╖ ╔ ╗ ╘ ╛ ╙ ╜ ╚ ╝ ╞ ╡ ╟ ╢ ╠ ╣ ╥ ╨ ╧ ╤ ╦ ╩ ╪ ╫ ╬ 〒 ⊢ ⊣ ⊤ ⊥ ╭ ╮ ╯ ╰ ⊦ ⊧ ⊨ ⊩ ⊪ ⊫ ⊬ ⊭ ⊮ ⊯ ⊺ 〦 〧 〨 ˦ ˧ ˨ ⑁ ⑂ ⑃ ∟
+		Ascii Symbols: https://en.wikipedia.org/wiki/Box-drawing_character
 	*/
 	//Print Corners
 	top := 1

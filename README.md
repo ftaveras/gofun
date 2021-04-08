@@ -1,2 +1,2 @@
 # gofun
-Golang fun programs
+Just fun code. No production code is allowed here;)

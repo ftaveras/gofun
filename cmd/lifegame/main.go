@@ -1,20 +1,27 @@
 package main
 
-import "fmt"
+import (
+	"time"
 
-const gameSize = 32
+	"github.com/ftaveras/gofun/pkg/screen"
+)
+
+const (
+	gameCols = 64
+	gameRows = 24
+)
 
 func gamePos(p int) int {
-	p = p % gameSize
+	p = p % gameRows
 	if p < 0 {
-		p = gameSize + p
+		p = gameRows + p
 	}
 	return p
 }
 
 func main() {
-	var gameState [gameSize][gameSize]int
-	var newState [gameSize][gameSize]int
+	var gameState [gameCols][gameRows]int
+	var newState [gameCols][gameRows]int
 	//var x, y int
 	var s int
 	//Init
@@ -27,13 +34,14 @@ func main() {
 
 	//println(gamePos(-1))
 	//return
+	screen.DrawBox(gameCols+2, gameRows+1)
 
 	for {
 		newState = gameState
 
-		for x := 0; x < gameSize; x++ {
+		for x := 0; x < gameCols; x++ {
 
-			for y := 0; y < gameSize; y++ {
+			for y := 0; y < gameRows; y++ {
 
 				//gameState[x][y] = x * y
 				//fmt.Printf("Game: %v, x: %d, y: %d\n", gameState[x][y], x, y)
@@ -50,39 +58,19 @@ func main() {
 					newState[x][y] = 0
 				}
 
-				/*
-					if newState[x][y] == 1 {
-						fmt.Printf("%v", " ")
-
-					} else {
-						fmt.Printf("%v", "█")
-					}
-				*/
-
-			}
-			//fmt.Printf("\n")
-		}
-		gameState = newState
-		//fmt.Printf("%v\n", gameState)
-		for x := 0; x < gameSize; x++ {
-
-			for y := 0; y < gameSize; y++ {
-
-				//gameState[x][y] = x * y
-				//fmt.Printf("Game: %v, x: %d, y: %d\n", gameState[x][y], x, y)
 				if gameState[x][y] == 1 {
 					//fmt.Printf("%v", " ")
-					printXY(" ", x, y)
+					screen.PrintXY(" ", x+1, y+1)
 
 				} else {
 					//fmt.Printf("%v", "█")
-					printXY("█", x, y)
+					screen.PrintXY("█", x+2, y+2)
 				}
+				time.Sleep(time.Millisecond)
 
 			}
-			fmt.Printf("\n")
 		}
-
+		gameState = newState
 	}
 
 }

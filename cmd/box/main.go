@@ -4,5 +4,8 @@ package main
 import "github.com/ftaveras/gofun/pkg/screen"
 
 func main() {
-	screen.DrawBox(80, 22)
+	screen.Clear()
+	t, l := 2, 5
+	screen.DrawBox(t, l, 80, 22)
+	screen.GotoXY(t+1, l+1)
 }

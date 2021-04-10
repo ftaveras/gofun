@@ -2,39 +2,37 @@ package screen
 
 import "fmt"
 
-func ClearScr() {
-	fmt.Printf("\033[J")
+func Clear() {
+	fmt.Printf("\033[2J")
 }
 
 func GotoXY(x, y int) {
-	fmt.Printf("\033[%d;%dH", y, x)
+	fmt.Printf("\033[%d;%dH", x, y)
 }
 
-func PrintXY(a string, x, y int) {
-	fmt.Printf("\033[%d;%dH%s", y, x, a)
+func PrintXY(a interface{}, x, y int) {
+	fmt.Printf("\033[%d;%dH%v", x, y, a)
 }
 
-func DrawBox(w, h int) {
+func DrawBox(top, lft, w, h int) {
 	/*
 		Ascii Symbols: https://en.wikipedia.org/wiki/Box-drawing_character
 	*/
 	//Print Corners
-	top := 1
-	lft := 1
-	ClearScr()
+	//top := 1
+	//lft := 1
 	//Print horizotal bars
-	for x := lft; x < w+lft; x++ {
-		PrintXY("═", x, top)
-		PrintXY("═", x, h+top)
+	for y := lft; y < w+lft; y++ {
+		PrintXY("═", top, y)
+		PrintXY("═", h+top, y)
 	}
 
 	for x := top; x < h+top; x++ {
-		PrintXY("║", lft, x)
-		PrintXY("║", w, x)
+		PrintXY("║", x, lft)
+		PrintXY("║", x, w+lft)
 	}
-	PrintXY("╔", lft, top) //tl
-	PrintXY("╗", w, top)   //tr
-	PrintXY("╚", 0, h+top) //bl
-	PrintXY("╝", w, h+top) //br
-	GotoXY(lft+1, top+1)   //position
+	PrintXY("╔", top, lft)     //tl
+	PrintXY("╗", top, w+lft)   //tr
+	PrintXY("╚", h+top, lft)   //bl
+	PrintXY("╝", h+top, w+lft) //br
 }

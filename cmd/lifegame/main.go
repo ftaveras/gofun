@@ -11,17 +11,17 @@ import (
 )
 
 const (
-	gameCols int = 136
-	gameRows int = 42 //gameCols
+	gameCols int = 68
+	gameRows int = 21 //gameCols
 
 )
 
 var (
 	gameInit = map[int][][]int{
-		/*0: {
-			{1, 3},
+		/*0: { //boat
 			{2, 3},
-			{3, 3},
+			{3, 2}, {3, 4},
+			{4, 3}, {4, 4},
 			//{4, 3},
 		},*/
 		1: {
@@ -47,6 +47,11 @@ var (
 		/*5: {
 			{2, 0}, {2, 2},
 		},*/
+		6: { //R-Pentomino
+			{1, 2}, {1, 3},
+			{2, 1}, {2, 2},
+			{3, 2},
+		},
 		/*10: {
 			{1, 2},
 			{2, 1},

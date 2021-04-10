@@ -7,7 +7,7 @@ Single console box draw.
 ##gamelife
 A golang implementation of Conway's Game of Life. 
 
-![Demo](https://github.com/ftaveras/lifegame/blob/main/image.jpg?raw=true)
+![Demo](https://github.com/ftaveras/gofun/blob/main/img/lifegame.png?raw=true)
 
 The user can specify an arbitrary setting, otherwise it will execute a random initial state from the available state values [1, 2, 3, 4, 58, 87].
 
